@@ -1,0 +1,14 @@
+version: '3'
+services:
+  web:
+    image: hello-flask
+    depends_on:
+      - db
+      - redis
+  redis:
+    image: redis:3.2-alpine
+  db:
+    image: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: "abcd"
+
